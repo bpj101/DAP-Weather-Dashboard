@@ -1,0 +1,27 @@
+{
+  "name": "DAP Weather Dashboard",
+  "authors": [
+    "Paul Julian <bpj101@dameagnesproductions.com>"
+  ],
+  "description": "Weather forcast app",
+  "main": "dap.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower-source",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "bootstrap": "~3.3.6",
+    "highcharts": "~4.2.1",
+    "jquery": "~2.1.4",
+    "angular-route": "~1.4.8"
+  }
+}
