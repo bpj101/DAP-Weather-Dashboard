@@ -9,15 +9,15 @@
       <tbody>
         <tr ng-repeat="city in cities">
           <td>
-            <img src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png">
+            <img ng-src="{{getWeatherImgUrl(city.weather[0].icon)}}">
           </td>
           <td>
             <b><a href="#/weather/{{city.id}} ">{{city.name}}, {{city.sys.country}} </a></b>
-            <img src="http://openweathermap.org/images/flags/{{city.sys.contry}}.toLowerCase().png">
+            <img ng-src="{{getCountryFlag(city.sys.country)}}">
             <b><i>{{city.weather[0].description}}</i></b>
             <p>
-              <span class="badge badge info">{{city.main.temp-273.15 | number}}℃</span>
-              Temperature from {{city.main.temp_min-273.15 | number}} to {{city.main.temp_max-273.15 | number}}℃, Wind {{city.wind.speed}}m/s. Clouds {{city.clouds.all}}%, {{city.main.pressure}} hpa
+              <span class="badge badge info">{{kelvinToFahrenheit(city.main.temp) | number}℉</span>
+              Temperature from {{kelvinToFahrenheit(city.main.temp_min) | number}} to {{kelvinToFahrenheit(city.main.temp_max) | number}}℉, Wind {{city.wind.speed}}m/s. Clouds {{city.clouds.all}}%, {{city.main.pressure}} hpa
             </p>
             <p>
               Geo coords 

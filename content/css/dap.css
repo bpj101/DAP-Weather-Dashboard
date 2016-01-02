@@ -5,3 +5,17 @@
 .cities {
   margin-top: 20px;
 }
+
+.weather-current {
+  margin-top: 20px;
+  margin-left: 18px;
+}
+
+.weather-controls {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.forecast-list {
+  margin-top: 20px;
+}

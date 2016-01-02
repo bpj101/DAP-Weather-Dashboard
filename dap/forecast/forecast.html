@@ -1,1 +1,28 @@
-<h1>Forecast Page</h1>
+<div class="row">
+  <div class="col-md-4 forecast-list">
+    <h4>Weather Forecast for {{forecast.city.name}},  {{forecast.city.country}}</h4>
+    <table class="table">
+      <tbody>
+        <tr ng-repeat="weather in forecast.list">
+          <td>{{getTime(weather.dt) | date: "dd MMM"}} <img ng-src="{{getWeatherImgUrl(weather.weather[0].icon)}}"></td>
+          <td>
+            <span class="label label-warning">{{kelvinToFahrenheit(weather.temp.max) | number}}℉</span>&nbsp;
+            <span class="label label-default">{{kelvinToFahrenheit(weather.temp.min) | number}}℉</span> &nbsp;&nbsp;
+            <i>{{weather.weather[0].description}}</i>
+            <p>
+              {{weather.speed}} m/s <br>
+              clouds: {{weather.clouds}}%, {{weather.pressure}} hpa
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-8">
+    <dap-forecast dp="forecast"></dap-forecast>
+  </div>
+</div>
+<div class="row weather-controls">
+    <a href="#/search" class="btn btn-info">Back to Search</a>
+    <a href="#/weather/{{forecast.city.id}}" class="btn btn-info">Back to Details</a>
+</div>
